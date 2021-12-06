@@ -235,8 +235,6 @@ const routes: Routes = [
                 path: 'respuestas',
                 component: RespuestasMantenimientoComponent 
             }
-
-            
         ] 
     }
     
