@@ -1,0 +1,31 @@
+<app-usuario-cliente-logeado-header></app-usuario-cliente-logeado-header>
+
+<div class="container tabla">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-body table-responsive">
+                    <table class="table" >
+                        <thead>
+                            <tr>
+                                <th>Id-Contrato</th>
+                                <th>Descripcion</th>
+                                <th>Estado</th>
+                                <th>Visualizar</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let contrato of contratos">
+                            <tr>
+                                <td>{{contrato.IdContrato}}</td>
+                                <td>{{contrato.Descripcion}}</td>
+                                <td>{{contrato.Estado}}</td>
+                                <td><a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a></td>
+                            </tr>
+                        </tbody> 
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
