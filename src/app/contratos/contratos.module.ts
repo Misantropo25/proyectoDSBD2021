@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ContratoMantenimientoComponent } from './contrato-mantenimiento/contrato-mantenimiento.component';
 import { ContratoVisualizacionComponent } from './contrato-visualizacion/contrato-visualizacion.component';
 import { UsuariosModule } from '../usuarios/usuarios.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UsuariosModule } from '../usuarios/usuarios.module';
   imports: [
     CommonModule,
     FormsModule,
-    UsuariosModule
+    UsuariosModule,
+    AppRoutingModule
   ]
 })
 export class ContratosModule { }

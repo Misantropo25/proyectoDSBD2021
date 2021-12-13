@@ -46,6 +46,7 @@ import { RespuestaMantenimientoVisualizarRespuestaComponent } from "./administra
 import { TicketVisualizacionComponent } from "./tickets/ticket-visualizacion/ticket-visualizacion.component";
 import { ServicioMantenimientoPlanesComponent } from './servicios/servicio-mantenimiento-planes/servicio-mantenimiento-planes.component';
 import { TicketSolicitudComponent } from "./tickets/ticket-solicitud/ticket-solicitud.component";
+import { TicketVisualizarComponent } from "./tickets/ticket-visualizar/ticket-visualizar.component";
 
 const routes: Routes = [
     //Seccion Principal Usuarios
@@ -126,6 +127,11 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
+        path: 'cliente/visualizar/:id',
+        component: TicketVisualizarComponent,
+        pathMatch: 'full'
+    },
+    {
         path: 'cliente/personal/modificar/:id',
         component: UsuarioClientePersonalModificarComponent,
         pathMatch: 'full'
@@ -137,7 +143,7 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     { 
-        path: 'inicioAdmin',
+        path: 'inicioAdmin/:id',
         component: InicioComponent,
         children:[
             {   

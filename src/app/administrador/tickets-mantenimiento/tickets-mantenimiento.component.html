@@ -3,7 +3,7 @@
   <div class="page__content shadow p-3 position-relative">
     <div class="page__content position-relative mt-3 mx-5">
       <div class="nav justify-content-end ">
-          <button class="btn btn-outline-secondary" routerLink="/inicioAdmin/agregarTicket">
+          <button class="btn btn-outline-secondary" routerLink="/inicioAdmin/id/agregarTicket">
             <i class="far fa-plus-square"> Agregar Nuevo Ticket</i>
           </button>
       </div>
@@ -33,17 +33,17 @@
             <td>{{ ticket.estadoTicket }}</td>
             <td>{{ ticket.tipoDeSolicitud }}</td>
             <td>
-              <a [routerLink]="['/inicioAdmin/visualizarTicket',ticket.id]"><button class="btn btn-outline-primary">
+              <a [routerLink]="['/inicioAdmin/id/visualizarTicket',ticket.id]"><button class="btn btn-outline-primary">
                 <i class="far fa-eye"></i> Ver
               </button></a>
             </td>
             <td>
-              <a [routerLink]="['/inicioAdmin/editarTicket',ticket.id]"><button class="btn btn-outline-warning" >
+              <a [routerLink]="['/inicioAdmin/id/editarTicket',ticket.id]"><button class="btn btn-outline-warning" >
                 <i class="far fa-edit"></i> Editar
               </button></a>
             </td>
             <td>
-              <a href="/inicioAdmin/tickets"><button  (click)="eliminarTicket(ticket.id)" class="btn btn-outline-danger">
+              <a href="/inicioAdmin/id/tickets"><button  (click)="eliminarTicket(ticket.id)" class="btn btn-outline-danger">
                 <i class="far fa-trash-alt"></i> Eliminar
               </button>
             </a>

@@ -7,6 +7,7 @@ import { TicketVisualizacionComponent } from './ticket-visualizacion/ticket-visu
 import { UsuariosModule } from '../usuarios/usuarios.module';
 import { TicketSolicitudComponent } from './ticket-solicitud/ticket-solicitud.component';
 import { RouterModule } from '@angular/router';
+import { TicketVisualizarComponent } from './ticket-visualizar/ticket-visualizar.component';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     TicketMantenimientoComponent,
     TicketVisualizacionComponent,
-    TicketSolicitudComponent
+    TicketSolicitudComponent,
+    TicketVisualizarComponent
   ],
   exports:[
     TicketMantenimientoComponent,

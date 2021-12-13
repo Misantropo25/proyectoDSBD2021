@@ -3,7 +3,7 @@
   <div class="page__content shadow p-3 position-relative">
     <div class="page__content position-relative mt-3 mx-5">
       <div class="nav justify-content-end ">
-          <button class="btn btn-outline-secondary" routerLink="/inicioAdmin/agregarCliente">
+          <button class="btn btn-outline-secondary" routerLink="/inicioAdmin/id/agregarCliente">
             <i class="far fa-plus-square"> Agregar nuevo Cliente</i>
           </button>
       </div>
@@ -44,12 +44,12 @@
               </button></a>
             </td>
             <td>
-              <a [routerLink]="['/inicioAdmin/editarCliente',cliente.id]"><button class="btn btn-outline-warning" >
+              <a [routerLink]="['/inicioAdmin/id/editarCliente',cliente.id]"><button class="btn btn-outline-warning" >
                 <i class="far fa-edit"></i> Editar
               </button></a>
             </td>
             <td>
-              <a href="/inicioAdmin/clientes"><button  (click)="eliminarCliente(cliente.id)" class="btn btn-outline-danger">
+              <a href="/inicioAdmin/id/clientes"><button  (click)="eliminarCliente(cliente.id)" class="btn btn-outline-danger">
                 <i class="far fa-trash-alt"></i> Eliminar
               </button>
             </a>

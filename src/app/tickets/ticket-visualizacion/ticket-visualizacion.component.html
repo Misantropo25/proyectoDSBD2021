@@ -40,11 +40,11 @@
           <td>
             {{ ticket.descripcionTicket }}
           </td>
-          <td>{{ ticket.estadoTicket }}</td>
+          <td>{{estadoTicket(ticket.estadoTicket )}}</td>
           <td>{{ ticket.tipoDeSolicitud }}</td>
           <td>
             <a
-              ><button class="btn btn-outline-secondary">
+              ><button [routerLink]="['/cliente/visualizar',ticket.id]" class="btn btn-outline-secondary">
                 <i class="far fa-eye"></i> Ver
               </button></a
             >

@@ -3,7 +3,7 @@
   <div class="page__content shadow p-3 position-relative">
     <div class="page__content position-relative mt-3 mx-5">
       <div class="nav justify-content-end ">
-          <button class="btn btn-outline-secondary" routerLink="/inicioAdmin/agregarServicio">
+          <button class="btn btn-outline-secondary" routerLink="/inicioAdmin/id/agregarServicio">
             <i class="far fa-plus-square"> Agregar Nuevo Servicio</i>
           </button>
       </div>
@@ -33,17 +33,17 @@
             <td>{{ servicio.costoServicio }}</td>
             <td>{{ servicio.fecCreacion }}</td>
             <td>
-              <a [routerLink]="['/inicioAdmin/visualizarServicio',servicio.id]"><button class="btn btn-outline-primary">
+              <a [routerLink]="['/inicioAdmin/id/visualizarServicio',servicio.id]"><button class="btn btn-outline-primary">
                 <i class="far fa-eye"></i> Ver
               </button></a>
             </td>
             <td>
-              <a [routerLink]="['/inicioAdmin/editarServicio',servicio.id]"><button class="btn btn-outline-warning" >
+              <a [routerLink]="['/inicioAdmin/id/editarServicio',servicio.id]"><button class="btn btn-outline-warning" >
                 <i class="far fa-edit"></i> Editar
               </button></a>
             </td>
             <td>
-              <a href="/inicioAdmin/servicios"><button  (click)="eliminarServicio(servicio.id)" class="btn btn-outline-danger">
+              <a href="/inicioAdmin/id/servicios"><button  (click)="eliminarServicio(servicio.id)" class="btn btn-outline-danger">
                 <i class="far fa-trash-alt"></i> Eliminar
               </button>
             </a>

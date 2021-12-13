@@ -12,8 +12,11 @@ import { AdministradorTicketService } from 'src/app/service/administradorTicket.
   styleUrls: ['./ticket-visualizacion.component.css']
 })
 export class TicketVisualizacionComponent implements OnInit {
+  
   id: string = "";
+
   unicos:Ticket[] = [];
+
   cliente: Cliente = {
     id: 0,
     dni: '',
@@ -46,6 +49,7 @@ export class TicketVisualizacionComponent implements OnInit {
 
   constructor(private _route: ActivatedRoute, private clienteService: AdministradorClienteService, private ticketService: AdministradorTicketService) { 
     this.clienteService.listarCliente(); 
+    this.ticketService.listarTickets();
   }
 
   ngOnInit(): void {
@@ -83,5 +87,10 @@ export class TicketVisualizacionComponent implements OnInit {
   }
 
   
-
+  estadoTicket(palabra:Boolean): String{
+    if(palabra){
+      return "Ticket sin responder";
+    }
+    return "Ticket respondido";
+  }
 }

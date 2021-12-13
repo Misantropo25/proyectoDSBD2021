@@ -33,7 +33,7 @@
           <br />
           
           <!-- Submit button -->
-          <a href="/cliente/tickets/:id" class="btn btn-primary btn-lg mb-4" tabindex="-1" role="button" (click)="solicitarTicket(id,descripcionTicket.value,tipoDeSolicitud.value)"> Registrar</a>
+          <a [routerLink]="['/cliente/tickets',id]" class="btn btn-primary btn-lg mb-4" tabindex="-1" role="button" (click)="solicitarTicket(id,descripcionTicket.value,tipoDeSolicitud.value)"> Registrar</a>
     
         </form>
       </div>
