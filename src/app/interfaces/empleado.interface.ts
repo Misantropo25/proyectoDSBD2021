@@ -13,5 +13,4 @@ export interface Empleado{
     sexo:string;
     tipDocIdentificacion: string;
     area: string;
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministradorService } from 'src/app/service/administrador-empleado.service';
+import { AdministradorEmpleadoService } from 'src/app/service/administradorEmpleado.service';
 import { Empleado } from '../../interfaces/empleado.interface';
 
 @Component({
@@ -9,7 +9,7 @@ import { Empleado } from '../../interfaces/empleado.interface';
 })
 export class EmpleadoMantenimientoNuevoEmpleadoComponent implements OnInit {
 
-  constructor(private empleadoService: AdministradorService) { }
+  constructor(private empleadoService: AdministradorEmpleadoService) { }
 
   ngOnInit(): void {
   }

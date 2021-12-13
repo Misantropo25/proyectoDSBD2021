@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/interfaces/cliente.interface';
-import { AdministradorService } from 'src/app/service/administrador-cliente.service';
+import { AdministradorClienteService } from 'src/app/service/administradorCliente.service';
 
 @Component({
   selector: 'app-clientes-mantenimiento-nuevo-cliente',
@@ -9,7 +9,7 @@ import { AdministradorService } from 'src/app/service/administrador-cliente.serv
 })
 export class ClientesMantenimientoNuevoClienteComponent implements OnInit {
 
-  constructor(private clienteService: AdministradorService) { }
+  constructor(private clienteService: AdministradorClienteService) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +28,9 @@ export class ClientesMantenimientoNuevoClienteComponent implements OnInit {
       direccion: direccion,
       nomUsuario: nomUsuario,
       nombre: nombre,
-      contrasenia: contrasenia
+      contrasenia: contrasenia,
+      clienteSolicito: [],
+      correspondeCliente: []
     };
     this.clienteService.agregarCliente(nuevoCliente);
   }   

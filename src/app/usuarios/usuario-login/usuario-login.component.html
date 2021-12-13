@@ -14,30 +14,45 @@
                     <h4 class="mt-1 mb-5 pb-1"></h4>
                   </div>
 
-                  <form (ngSubmit)="login()">
-                    <p>Por favor ingresa tus datos</p>
+                  <form [formGroup]="formLogin" (submit)="send()">
+                    <h2>Por favor ingresa tus datos c:</h2>
   
                     <div class="form-outline mb-4">
-                      <input type="usuario"
-                      name="usuario"
-                      placeholder="Usuario"
-                      required="required"/>
+                      <h3>Usuario</h3>
+                      <input id="usuario"  
+                      type="text"
+                      class="form-control"
+                      formControlName="usuario"
+                      placeholder="usuario"
+                      
+                        />
                       <label class="form-label" for="user" ></label>
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="contrasenia"
+                      <h3>Contraseña</h3>
+                      <input 
+                      id="contrasenia"
+                      type="text"
+                      class="form-control"
                       name="contrasenia"
                       placeholder="Contraseña"
-                      required="required" >
+                      required="required" 
+                      formControlName="contrasenia"
+                      >
                       <label class="form-label" for="contra"></label>
                     </div>
   
-                    <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" routerLink="/inicioAdmin"
-                      routerLinkActive="active" type="submit" >Ingresar</button>
-                      <a class="text-muted" >Forgot password?</a>
+                    <div class="text-center">
+                      <button  class="btn btn-outline-danger" type="submit" value="ValidarUsuario" [disabled]="formLogin.invalid" (click)="validarUsuario()" [routerLink]="[palabra,id]"    > Ingresar </button>
+                      <div style="visibility: hidden"> *ngIf="{{validarUsuario()}}" </div>
+                      <!-- [routerLink]="[palabra,id]" -->
                     </div>
+
+                    
+                    <br>
+                    <hr>
+
                     <!-- routerLink="//cliente/personal" -->
                     <div class="d-flex align-items-center justify-content-center pb-4">
                       <p class="mb-0 me-2">¿No tienes una cuenta?</p>

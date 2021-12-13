@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministradorService } from 'src/app/service/administrador-contrato.service';
+import { AdministradorContratoService } from 'src/app/service/administradorContrato.service';
 
 @Component({
   selector: 'app-contratos-mantenimiento',
@@ -8,7 +8,7 @@ import { AdministradorService } from 'src/app/service/administrador-contrato.ser
 })
 export class ContratosMantenimientoComponent implements OnInit {
 
-  constructor(private contratoService: AdministradorService) { 
+  constructor(private contratoService: AdministradorContratoService) { 
     this.contratoService.listarContrato();
   }
 
@@ -23,4 +23,11 @@ export class ContratosMantenimientoComponent implements OnInit {
     this.contratoService.eliminarContrato(idContrato);
   }
 
+  contratoActivo(valor: Boolean):String{
+    if(valor==true){
+      return "Contrato Activo";
+    }
+    return "Contrato Terminado";
+
+  }
 }

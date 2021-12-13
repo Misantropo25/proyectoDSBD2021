@@ -8,11 +8,16 @@ import { Observable } from 'rxjs';
   })
 
 
-export class AdministradorService {
+export class AdministradorClienteService {
     constructor(private http: HttpClient) {
     }
     
     public lista: Cliente[] = [];
+
+    public listaUsuarios:Array<string>[] = [];
+    public Usuarios: [NomUsuario:string,contrasenia:string] = [" ",""];
+
+
     // public clientePorId: Cliente[] = [];
 
     listarCliente() {
@@ -41,8 +46,10 @@ export class AdministradorService {
         });
     }
 
-
-
+    cargarClientes() {
+        return this.http.get('http://127.0.0.1:8091//api/cliente');
+    }
+    
 
 
 

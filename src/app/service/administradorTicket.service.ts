@@ -9,7 +9,7 @@ import { Ticket } from '../interfaces/ticket.interface';
   })
 
 
-export class AdministradorService {
+export class AdministradorTicketService {
     constructor(private http: HttpClient) {
     }
     

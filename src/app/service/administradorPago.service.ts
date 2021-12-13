@@ -10,7 +10,7 @@ import { Pago } from '../interfaces/pago.interface';
   })
 
 
-export class AdministradorService {
+export class AdministradorPagoService {
     constructor(private http: HttpClient) {
     }
     

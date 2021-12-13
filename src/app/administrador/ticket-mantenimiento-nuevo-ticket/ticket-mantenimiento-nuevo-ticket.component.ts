@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from 'src/app/interfaces/cliente.interface';
 import { Ticket } from 'src/app/interfaces/ticket.interface';
-import { AdministradorService } from 'src/app/service/administrador-ticket.service';
+import { AdministradorTicketService } from 'src/app/service/administradorTicket.service';
 
 @Component({
   selector: 'app-ticket-mantenimiento-nuevo-ticket',
@@ -8,8 +9,24 @@ import { AdministradorService } from 'src/app/service/administrador-ticket.servi
   styleUrls: ['./ticket-mantenimiento-nuevo-ticket.component.scss']
 })
 export class TicketMantenimientoNuevoTicketComponent implements OnInit {
-
-  constructor(private ticketService: AdministradorService) { }
+  cliente: Cliente = {
+    id: 0,
+    dni: '',
+    apePaterno: '',
+    apeMaterno: '',
+    contrasenia: '',
+    direccion: '',
+    email: '',
+    nacionalidad: '',
+    nomUsuario: '',
+    nombre: '',
+    numTelefono: '',
+    sexo: '',
+    tipDocIdentificacion: '',
+    clienteSolicito: [],
+    correspondeCliente: []
+  }
+  constructor(private ticketService: AdministradorTicketService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +39,7 @@ export class TicketMantenimientoNuevoTicketComponent implements OnInit {
       fecCreacion: new Date,
       fecFinalizacion: new Date,
       tipoDeSolicitud: tipoDeSolicitud,
-      clienteSolicito: 0
+      clienteSolicito: this.cliente
     };
     this.ticketService.agregarTicket(nuevoTicket);
   }  

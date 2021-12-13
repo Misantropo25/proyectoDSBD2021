@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    // console.log(this._route.snapshot.paramMap.get('id'));
+  }
 
   ngOnInit(): void {
   }
@@ -16,5 +19,6 @@ export class InicioComponent implements OnInit {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
+
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Contrato } from '../interfaces/contrato.interface';
-import { ContratoService } from '../services/contratos.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-contrato-visualizacion',
@@ -8,15 +8,13 @@ import { ContratoService } from '../services/contratos.service';
   styleUrls: ['./contrato-visualizacion.component.css']
 })
 export class ContratoVisualizacionComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
   
-  private contratosService: ContratoService = new ContratoService;
-
-  contratos: Contrato[] = this.contratosService.contratos
+  
 
   
 

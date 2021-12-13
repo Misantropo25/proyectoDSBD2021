@@ -9,7 +9,7 @@ import { Servicio } from '../interfaces/servicio.interface';
   })
 
 
-export class AdministradorService {
+export class AdministradorServicioService {
     constructor(private http: HttpClient) {
     }
     

@@ -1,3 +1,5 @@
+import { Contrato } from "./contrato.interface";
+
 export interface Pago{
     id: number;
     estadoPago: Boolean;
@@ -5,5 +7,5 @@ export interface Pago{
     fechaPago: Date;
     monto: number;
     mora: number;
-    correspondeContrato: number;
+    correspondeContrato: Contrato;
 }

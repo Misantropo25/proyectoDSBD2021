@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/interfaces/cliente.interface';
-import { AdministradorService } from 'src/app/service/administrador-cliente.service';
+import { AdministradorClienteService } from 'src/app/service/administradorCliente.service';
 
 @Component({
   selector: 'app-clientes-mantenimiento',
@@ -9,12 +9,11 @@ import { AdministradorService } from 'src/app/service/administrador-cliente.serv
 })
 
 export class ClientesMantenimientoComponent implements OnInit {
-  constructor(private clienteService: AdministradorService){
+  constructor(private clienteService: AdministradorClienteService){
     this.clienteService.listarCliente();
   }
   
-  ngOnInit():void {
-  }
+  ngOnInit():void {}
 
   get lista() {
     return this.clienteService.lista;
@@ -23,6 +22,7 @@ export class ClientesMantenimientoComponent implements OnInit {
   eliminarCliente(idCliente:number) {
     this.clienteService.eliminarCliente(idCliente);
   }
+  
   
 }
 

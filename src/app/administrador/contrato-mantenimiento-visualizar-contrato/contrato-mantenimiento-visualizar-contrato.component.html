@@ -1,5 +1,5 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Ver Empleado</div>
+    <div class="d-flex page__box p-3 mt-2">Ver Contrato</div>
     <div class="page__content shadow p-3 position-relative">
       <div class="page__content position-relative mt-3 mx-5">
         <div class="nav justify-content-end ">
@@ -22,16 +22,15 @@
                         <li class="list-group-item"><b>Direccion: </b>{{contrato.direccion}}</li>
                         <li class="list-group-item"><b>Distrito: </b>{{contrato.distritoDireccion}}</li>
                         <li class="list-group-item"><b>Estado Contrato: </b>{{contrato.estadoContrato}}</li>
-                        <li class="list-group-item"><b>Fecha Creacion: </b>{{contrato.fecCreacion}</li>
+                        <li class="list-group-item"><b>Fecha Creacion: </b>{{contrato.fecCreacion}}</li>
                         <li class="list-group-item"><b>Fecha Finalizacion: </b>{{contrato.fecFinalizacion}}</li>
                         <li class="list-group-item"><b>Modo de Pago: </b>{{contrato.modDePago}}</li>
                         <li class="list-group-item"><b>Referencia Direccion: </b>{{contrato.refDireccion}}</li>
                         <li class="list-group-item"><b>Restricciones: </b>{{contrato.restricciones}}</li>
                         <li class="list-group-item"><b>Tasa de Mora: </b>{{contrato.tasaDeMora}}</li>
-                        <li class="list-group-item"><b>Corresponde Cliente: </b>{{contrato.correspondeCliente}}</li>
-                        <li class="list-group-item"><b>Tiene Servicio: </b>{{contrato.tieneServicio}}</li>
+                        <li class="list-group-item"><b>Corresponde Cliente: </b>{{contrato.correspondeCliente.nombre}}</li>
+                        <li class="list-group-item"><b>Tiene Servicio: </b>{{contrato.tieneServicio.nombreServicio}}</li>
                       </ul>
-                      
                     </div>
               </div>
           </div>

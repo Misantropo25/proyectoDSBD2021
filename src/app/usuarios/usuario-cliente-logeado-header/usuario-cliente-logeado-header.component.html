@@ -7,27 +7,27 @@
      <div class="collapse navbar-collapse" id="navbarScroll">
        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/cliente/personal"
+          <a class="nav-link" [routerLink]="['/cliente/personal',id]"
           routerLinkActive="active">Informacion Personal</a>
         </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/cliente/contrato"
-           routerLinkActive="active">Contratos</a>
+           <a class="nav-link" [routerLink]="['/cliente/contrato',id]"
+           >Contratos</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/cliente/planes"
-           routerLinkActive="active">Planes</a>
+           <a class="nav-link" [routerLink]="['/cliente/planes',id]"
+           >Planes</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/cliente/tickets"
-           routerLinkActive="active">Tickets</a>
+           <a class="nav-link" [routerLink]="['/cliente/tickets',id]"
+           >Tickets</a>
          </li>
        </ul>
        <a class="nav-link"><img width="50px" height="50px" src="../../../assets/images/cliente/IconoSL.png" alt="...">
-        Nombre
+        {{cliente.nombre}}
         </a>
         <a routerLink="/login"
-      routerLinkActive="active">
+      >
         <button class="btn btn-outline-warning" >SALIR</button>
       </a>
      </div>

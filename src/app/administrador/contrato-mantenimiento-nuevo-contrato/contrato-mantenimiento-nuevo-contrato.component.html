@@ -52,12 +52,32 @@
           <!-- Modo de Pago input-->
           <div class="input-group mb-3">
             <select class="form-select" id="modoDePago" #modoDePago>
-              <option selected>Modo de Pago</option>
-              <option id="modoDePago" value="M">Mensual</option>
-              <option id="modoDePago" value="F">Semestral</option>
-              <option id="modoDePago" value="O">Anual</option>
+              <option disabled selected>Modo de Pago</option>
+              <option id="modoDePago" value="Mensual">Mensual</option>
+              <option id="modoDePago" value="Semestral">Semestral</option>
+              <option id="modoDePago" value="Anual">Anual</option>
             </select>
             <label class="input-group-text" for="modoDePago">Seleccione</label>
+          </div>
+          <br />
+
+          <!-- Cliente en contrato input-->
+          <div class="input-group mb-3">
+            <select class="form-select" id="clienteCorresponde" #clienteCorresponde>
+              <option disabled selected>Seleccione al cliente</option>
+              <option *ngFor="let cliente of listaClientes"  id="clienteCorresponde" value="{{cliente.id}}">{{cliente.nombre}}</option>
+            </select>
+            <label class="input-group-text" for="clienteCorresponde">Seleccione</label>
+          </div>
+          <br />
+
+          <!-- Servicio en contrato input-->
+          <div class="input-group mb-3">
+            <select  class="form-select servicioCorresponde" name="servicioCorresponde" id="servicioCorresponde" #servicioCorresponde>
+              <option disabled selected>Seleccione el servicio a contratar</option>
+              <option *ngFor="let servicio of listaServicios" id="servicioCorresponde" value="{{servicio.id}}">{{servicio.nombreServicio}}</option>
+            </select>
+            <label class="input-group-text" for="servicioCorresponde">Seleccione</label>
           </div>
           <br />
   
@@ -72,7 +92,7 @@
             <input type="text" id="restricciones" class="form-control" #restricciones/>
             <label class="form-label" for="restricciones">Restricciones</label>
           </div>
-  
+          
           <!-- tasaDeMora input -->
           <div class="form-outline mb-4">
             <input type="number" id="tasaDeMora" class="form-control" #tasaDeMora/>
@@ -80,13 +100,14 @@
               >Tasa de Mora</label
             >
           </div>
-  
-  
-          <!-- Submit button -->
-          <a href="/inicioAdmin/contratos" class="btn btn-primary btn-lg mb-4" tabindex="-1" role="button" (click)="crearContrato(descripcion.value,direccion.value,distritoDireccion.value,modoDePago.value,refDireccion.value,restricciones.value,tasaDeMora.value)"> Registrar</a>
-    
+          
+          <div class="container row row-col-6">
+          
+          <!-- <a  class="btn btn-primary btn-lg mb-4 col-4" tabindex="-1" role="button" (click)="VerificarDatosIngresados(clienteCorresponde.value,servicioCorresponde.value)"> Validar los datos ingresados</a> -->
+          <a  href="/inicioAdmin/contratos" class="btn btn-primary btn-lg mb-4 col-4" tabindex="-1" role="button" (click)="crearContrato(descripcion.value,direccion.value,distritoDireccion.value,modoDePago.value,refDireccion.value,restricciones.value,tasaDeMora.value,clienteCorresponde.value,servicioCorresponde.value)"> Registrar Contrato</a>
+          </div>
         </form>
       </div>
     </div>
   </div>
-  
+

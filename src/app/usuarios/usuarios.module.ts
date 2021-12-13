@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UsuarioInicioComponent } from './usuario-inicio/usuario-inicio.component';
 import { UsuarioHeaderComponent } from './usuario-header/usuario-header.component';
@@ -61,7 +61,8 @@ import { UsuarioClientePersonalModificarComponent } from './usuario-cliente-pers
   imports:[
     CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ]
 })
 

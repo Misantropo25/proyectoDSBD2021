@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AdministradorService } from 'src/app/service/administrador-empleado.service';
+import { AdministradorEmpleadoService } from 'src/app/service/administradorEmpleado.service';
 import { Empleado } from '../../interfaces/empleado.interface';
 
 @Component({
@@ -27,7 +27,7 @@ export class EmpleadoMantenimientoEditarEmpleadoComponent implements OnInit {
     tipDocIdentificacion: ''
   }
 
-  constructor(private empleadoService: AdministradorService, private _route: ActivatedRoute) {
+  constructor(private empleadoService: AdministradorEmpleadoService, private _route: ActivatedRoute) {
     console.log(this._route.snapshot.paramMap.get('id'));
    }
 

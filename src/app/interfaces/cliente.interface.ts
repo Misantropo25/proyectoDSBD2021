@@ -1,3 +1,7 @@
+import { Contrato } from "./contrato.interface";
+import { Servicio } from "./servicio.interface";
+import { Ticket } from './ticket.interface';
+
 
 export interface Cliente{
     id: number;
@@ -13,4 +17,6 @@ export interface Cliente{
     numTelefono: string;
     sexo:string;
     tipDocIdentificacion: string;
+    clienteSolicito: Ticket[];
+    correspondeCliente: Contrato[];
 }

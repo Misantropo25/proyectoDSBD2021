@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministradorService } from 'src/app/service/administrador-pago.service';
+import { AdministradorPagoService } from 'src/app/service/administradorPago.service';
 
 @Component({
   selector: 'app-pagos-mantenimiento',
@@ -8,7 +8,7 @@ import { AdministradorService } from 'src/app/service/administrador-pago.service
 })
 export class PagosMantenimientoComponent implements OnInit {
 
-  constructor(private pagoService: AdministradorService) { 
+  constructor(private pagoService: AdministradorPagoService) { 
     this.pagoService.listarPagos();
   }
 

@@ -1,3 +1,6 @@
+import { Cliente } from "./cliente.interface";
+import { Servicio } from "./servicio.interface";
+
 export interface Contrato{
     id: number;
     descripcion: string;
@@ -10,6 +13,6 @@ export interface Contrato{
     refDireccion: string;
     restricciones: string;
     tasaDeMora: number;
-    correspondeCliente: number;
-    tieneServicio: number;
+    correspondeCliente: Cliente;
+    tieneServicio: Servicio;
 }

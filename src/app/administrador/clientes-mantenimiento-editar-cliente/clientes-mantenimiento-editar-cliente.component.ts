@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cliente } from 'src/app/interfaces/cliente.interface';
-import { AdministradorService } from 'src/app/service/administrador-cliente.service';
+import { AdministradorClienteService } from 'src/app/service/administradorCliente.service';
 
 
 @Component({
@@ -24,7 +24,9 @@ export class ClientesMantenimientoEditarClienteComponent implements OnInit {
     direccion: "",
     nomUsuario: "",
     nombre: "",
-    contrasenia: ""
+    contrasenia: "",
+    clienteSolicito: [],
+    correspondeCliente: []
   };
 
   // private idCliente: number = 0;
@@ -32,7 +34,7 @@ export class ClientesMantenimientoEditarClienteComponent implements OnInit {
   
   
 
-  constructor(private clienteService: AdministradorService, private _route: ActivatedRoute) {
+  constructor(private clienteService: AdministradorClienteService, private _route: ActivatedRoute) {
     console.log(this._route.snapshot.paramMap.get('id'));
    }
 
@@ -43,6 +45,8 @@ export class ClientesMantenimientoEditarClienteComponent implements OnInit {
         this.cliente = data
       });
     }
+
+    
   }
   
   
@@ -61,7 +65,9 @@ export class ClientesMantenimientoEditarClienteComponent implements OnInit {
       direccion: direccion,
       nomUsuario: nomUsuario,
       nombre: nombre,
-      contrasenia: contrasenia
+      contrasenia: contrasenia,
+      clienteSolicito: [],
+      correspondeCliente: []
     };
     this.clienteService.editarCliente(parseInt(id),clienteModificado);
   }   

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministradorService } from 'src/app/service/administrador-servicio.service';
+import { AdministradorServicioService } from 'src/app/service/administradorServicio.service';
 
 @Component({
   selector: 'app-servicios-mantenimiento',
@@ -8,7 +8,7 @@ import { AdministradorService } from 'src/app/service/administrador-servicio.ser
 })
 export class ServiciosMantenimientoComponent implements OnInit {
 
-  constructor(private servicioService: AdministradorService) { 
+  constructor(private servicioService: AdministradorServicioService) { 
     this.servicioService.listarServicios();
   }
 

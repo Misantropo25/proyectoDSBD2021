@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Contrato } from '../interfaces/contrato.interface';
+import { Cliente } from '../interfaces/cliente.interface';
+import { Servicio } from '../interfaces/servicio.interface';
+
 
 
 
@@ -10,12 +13,11 @@ import { Contrato } from '../interfaces/contrato.interface';
   })
 
 
-export class AdministradorService {
+export class AdministradorContratoService {
     constructor(private http: HttpClient) {
     }
     
     public lista: Contrato[] = [];
-
 
     listarContrato() {
         this.http.get<Contrato[]>('http://127.0.0.1:8091//api/contrato').subscribe((resp: any) => {
@@ -29,7 +31,10 @@ export class AdministradorService {
     }
 
     agregarContrato(contrato: Contrato){
-        this.http.post<any>('http://127.0.0.1:8091//api/contrato', contrato).subscribe();
+        this.http.post<any>('http://127.0.0.1:8091//api/contrato/', contrato).subscribe((resp: any) => {
+            console.log(resp);
+            this.lista = resp;
+        });
     } 
 
     eliminarContrato(idContrato:number){
@@ -42,10 +47,6 @@ export class AdministradorService {
             this.lista = resp;
         });
     }
-
-
-
-
 
 
 }

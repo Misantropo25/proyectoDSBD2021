@@ -9,7 +9,7 @@ import { Empleado } from '../interfaces/empleado.interface';
   })
 
 
-export class AdministradorService {
+export class AdministradorEmpleadoService {
     constructor(private http: HttpClient) {
     }
     
@@ -17,7 +17,7 @@ export class AdministradorService {
 
 
     listarEmpleado() {
-        this.http.get<Empleado[]>('http://127.0.0.1:8091//api/empleado').subscribe((resp: any) => {
+        this.http.get<Empleado[]>('http://127.0.0.1:8091//api/empleado/').subscribe((resp: any) => {
             console.log(resp);
             this.lista = resp;
         });
@@ -42,7 +42,9 @@ export class AdministradorService {
         });
     }
 
-
+    cargarEmpleados() {
+        return this.http.get('http://127.0.0.1:8091//api/empleado');
+    }
 
 
 

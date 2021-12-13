@@ -25,8 +25,9 @@
           <tr *ngFor="let contrato of lista">
             <td>{{ contrato.id }}</td>
             <td>
+
               {{
-                contrato.estadoContrato 
+                contratoActivo(contrato.estadoContrato) 
               }}
             </td>
             <td>{{ contrato.fecCreacion }}</td>

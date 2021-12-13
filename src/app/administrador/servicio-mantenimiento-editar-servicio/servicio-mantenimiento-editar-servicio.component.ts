@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AdministradorService } from 'src/app/service/administrador-servicio.service';
+import { AdministradorServicioService } from 'src/app/service/administradorServicio.service';
 import { Servicio } from '../../interfaces/servicio.interface';
 
 @Component({
@@ -20,7 +20,7 @@ export class ServicioMantenimientoEditarServicioComponent implements OnInit {
     nombreServicio: ''
   }
 
-  constructor(private servicioService: AdministradorService, private _route: ActivatedRoute) { }
+  constructor(private servicioService: AdministradorServicioService, private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this._route.snapshot.paramMap.get('id');

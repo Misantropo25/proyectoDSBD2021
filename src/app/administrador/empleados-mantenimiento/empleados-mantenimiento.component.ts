@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministradorService } from '../../service/administrador-empleado.service';
+import { AdministradorEmpleadoService } from '../../service/administradorEmpleado.service';
 
 @Component({
   selector: 'app-empleados-mantenimiento',
@@ -7,8 +7,8 @@ import { AdministradorService } from '../../service/administrador-empleado.servi
   styleUrls: ['./empleados-mantenimiento.component.scss']
 })
 export class EmpleadosMantenimientoComponent implements OnInit {
-
-  constructor(private empleadoService: AdministradorService) {
+  
+  constructor(private empleadoService: AdministradorEmpleadoService) {
     this.empleadoService.listarEmpleado();
    }
 

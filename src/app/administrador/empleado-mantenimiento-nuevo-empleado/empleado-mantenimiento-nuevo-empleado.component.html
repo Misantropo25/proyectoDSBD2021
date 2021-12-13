@@ -15,7 +15,7 @@
         <br />
         <form class="fs-6">
           <div class="form-outline mb-4">
-            <input type="text" id="nombre" class="form-control" #nombre />
+            <input type="text" id="nombre"  class="form-control" #nombre />
             <label class="form-label" for="nombre">Nombre</label>
           </div>
           <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -52,7 +52,7 @@
           <!-- Sexo input-->
           <div class="input-group mb-3">
             <select class="form-select" id="sexo" #sexo>
-              <option selected>Sexo</option>
+              <option disabled selected>Sexo</option>
               <option id="sexo" value="M">Masculino</option>
               <option id="sexo" value="F">Femenino</option>
               <option id="sexo" value="O">Otro</option>
@@ -63,8 +63,8 @@
 
           <!-- Area input-->
           <div class="input-group mb-3">
-            <select class="form-select" id="area" #area>
-              <option selected>Area</option>
+            <select class="form-select" id="area" placeholder="Area" #area>
+              <option disabled selected >Seleccione el Area</option>
               <option id="area" value="Administrativa">Administrativa</option>
               <option id="area" value="Tecnica">Tecnica</option>
               <option id="area" value="Atencion al Cliente">Atencion al Cliente</option>
@@ -76,9 +76,9 @@
           <!-- Tipo de Documento de identificacion -->
           <div class="input-group mb-3">
             <select class="form-select" id="tipDocIdentificacion" #tipDocIdentificacion>
-              <option selected>Tipo de Documento de identificacion</option>
+              <option disabled selected>Tipo de Documento de identificacion</option>
               <option id="tipDocIdentificacion" value="DNI">DNI</option>
-              <option id="tipDocIdentificacion" value="null">Proximamente...</option>
+              <option disabled id="tipDocIdentificacion" value="null">Proximamente...</option>
             </select>
             <label class="input-group-text" for="tipDocIdentificacion"
               >Seleccione</label

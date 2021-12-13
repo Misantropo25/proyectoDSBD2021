@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Servicio } from 'src/app/interfaces/servicio.interface';
-import { AdministradorService } from 'src/app/service/administrador-servicio.service';
+import { AdministradorServicioService } from 'src/app/service/administradorServicio.service';
 import { ServicioCompraPlanesComponent } from '../../servicios/servicio-compra-planes/servicio-compra-planes.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { ServicioCompraPlanesComponent } from '../../servicios/servicio-compra-p
 })
 export class ServicioMantenimientoNuevoServicioComponent implements OnInit {
 
-  constructor(private servicioService: AdministradorService) { }
+  constructor(private servicioService: AdministradorServicioService) { }
 
   ngOnInit(): void {
   }

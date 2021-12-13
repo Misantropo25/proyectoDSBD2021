@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Cliente } from 'src/app/interfaces/cliente.interface';
+import { AdministradorClienteService } from 'src/app/service/administradorCliente.service';
 
 @Component({
   selector: 'app-usuario-cliente-personal',
@@ -6,11 +9,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuario-cliente-personal.component.css']
 })
 export class UsuarioClientePersonalComponent implements OnInit {
+  id: string = "";
 
-  constructor(
-    
-  ) { }
+  cliente: Cliente = {
+    id: 0,
+    dni: '',
+    apePaterno: '',
+    apeMaterno: '',
+    contrasenia: '',
+    direccion: '',
+    email: '',
+    nacionalidad: '',
+    nomUsuario: '',
+    nombre: '',
+    numTelefono: '',
+    sexo: '',
+    tipDocIdentificacion: '',
+    clienteSolicito: [],
+    correspondeCliente: []
+  }
+
+  constructor(private _route: ActivatedRoute, private clienteService: AdministradorClienteService) {
+    this.clienteService.listarCliente(); 
+  }
 
   ngOnInit(): void {
+    const id = this._route.snapshot.paramMap.get('id');
+    if(id != null){
+      this.id = id;
+    }
+    if(id!=null){
+      this.clienteService.listarClientePorId(parseInt(id)).subscribe((data: Cliente) => {
+        this.cliente = data
+      });
+    }
+    
+  }
+
+
+  get lista() {
+    return this.clienteService.lista;
   }
 }

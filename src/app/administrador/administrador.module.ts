@@ -47,6 +47,9 @@ import { TicketMantenimientoNuevoTicketComponent } from './ticket-mantenimiento-
 import { TicketMantenimientoEditarTicketComponent } from './ticket-mantenimiento-editar-ticket/ticket-mantenimiento-editar-ticket.component';
 import { TicketMantenimientoVisualizarTicketComponent } from './ticket-mantenimiento-visualizar-ticket/ticket-mantenimiento-visualizar-ticket.component';
 import { RespuestasMantenimientoComponent } from './respuestas-mantenimiento/respuestas-mantenimiento.component';
+import { RespuestaMantenimientoEditarRespuestaComponent } from './respuesta-mantenimiento-editar-respuesta/respuesta-mantenimiento-editar-respuesta.component';
+import { RespuestaMantenimientoVisualizarRespuestaComponent } from './respuesta-mantenimiento-visualizar-respuesta/respuesta-mantenimiento-visualizar-respuesta.component';
+import { RespuestaMantenimientoNuevaRespuestaComponent } from './respuesta-mantenimiento-nueva-respuesta/respuesta-mantenimiento-nueva-respuesta.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,9 @@ import { RespuestasMantenimientoComponent } from './respuestas-mantenimiento/res
     TicketMantenimientoEditarTicketComponent,
     TicketMantenimientoVisualizarTicketComponent,
     RespuestasMantenimientoComponent,
+    RespuestaMantenimientoEditarRespuestaComponent,
+    RespuestaMantenimientoVisualizarRespuestaComponent,
+    RespuestaMantenimientoNuevaRespuestaComponent,
   ],
   exports:[
     HeaderComponent,

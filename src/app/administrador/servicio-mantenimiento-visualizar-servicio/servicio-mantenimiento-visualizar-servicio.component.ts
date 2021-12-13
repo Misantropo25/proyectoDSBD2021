@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Servicio } from 'src/app/interfaces/servicio.interface';
-import { AdministradorService } from 'src/app/service/administrador-servicio.service';
+import { AdministradorServicioService } from 'src/app/service/administradorServicio.service';
 
 @Component({
   selector: 'app-servicio-mantenimiento-visualizar-servicio',
@@ -20,7 +20,7 @@ export class ServicioMantenimientoVisualizarServicioComponent implements OnInit 
     nombreServicio: ''
   }
 
-  constructor(private servicioService: AdministradorService, private _route: ActivatedRoute) { }
+  constructor(private servicioService: AdministradorServicioService, private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this._route.snapshot.paramMap.get('id');

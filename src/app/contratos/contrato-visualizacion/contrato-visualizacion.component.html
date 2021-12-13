@@ -14,7 +14,7 @@
                                 <th>Visualizar</th>
                             </tr>
                         </thead>
-                        <tbody *ngFor="let contrato of contratos">
+                        <tbody *ngFor="let contrato of null">
                             <tr>
                                 <td>{{contrato.IdContrato}}</td>
                                 <td>{{contrato.Descripcion}}</td>
@@ -22,6 +22,7 @@
                                 <td><a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a></td>
                             </tr>
                         </tbody> 
+                        
                         
                     </table>
                 </div>

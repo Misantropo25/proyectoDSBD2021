@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cliente } from 'src/app/interfaces/cliente.interface';
-import { AdministradorService } from 'src/app/service/administrador-cliente.service';
+import { Contrato } from 'src/app/interfaces/contrato.interface';
+import { Servicio } from 'src/app/interfaces/servicio.interface';
+import { AdministradorClienteService } from 'src/app/service/administradorCliente.service';
+import { Ticket } from '../../interfaces/ticket.interface';
+
 
 @Component({
   selector: 'app-clientes-mantenimiento-visualizar-cliente',
@@ -9,6 +13,16 @@ import { AdministradorService } from 'src/app/service/administrador-cliente.serv
   styleUrls: ['./clientes-mantenimiento-visualizar-cliente.component.scss']
 })
 export class ClientesMantenimientoVisualizarClienteComponent implements OnInit {
+  
+  servicio:Servicio={
+    id: 0,
+    costoServicio: 0,
+    descripcion: '',
+    estadoServicio: true,
+    fecCreacion: new Date,
+    fecExpiracion: new Date,
+    nombreServicio: ''
+  }
 
   cliente: Cliente = {
     id: 0,
@@ -23,11 +37,32 @@ export class ClientesMantenimientoVisualizarClienteComponent implements OnInit {
     direccion: "",
     nomUsuario: "",
     nombre: "",
-    contrasenia: ""
+    contrasenia: "",
+    clienteSolicito: [],
+    correspondeCliente: []
   };
 
-  constructor(private clienteService: AdministradorService, private _route: ActivatedRoute) { 
+  contrato: Contrato={
+    id: 0,
+    descripcion: '',
+    direccion: '',
+    distritoDireccion: '',
+    estadoContrato: true,
+    fecCreacion:  new Date,
+    fecFinalizacion:  new Date,
+    modDePago: '',
+    refDireccion: '',
+    restricciones: '',
+    tasaDeMora: 0,
+    correspondeCliente: this.cliente,
+    tieneServicio: this.servicio
+  }
+
+  
+
+  constructor(private clienteService: AdministradorClienteService, private _route: ActivatedRoute) { 
     console.log(this._route.snapshot.paramMap.get('id'));
+
   }
 
   ngOnInit(): void {
@@ -37,7 +72,9 @@ export class ClientesMantenimientoVisualizarClienteComponent implements OnInit {
         this.cliente = data
       });
     }
+    
   }
+
 
   
 

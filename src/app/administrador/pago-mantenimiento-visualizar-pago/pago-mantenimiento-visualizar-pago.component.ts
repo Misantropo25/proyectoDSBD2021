@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Contrato } from 'src/app/interfaces/contrato.interface';
+import { Pago } from 'src/app/interfaces/pago.interface';
+import { AdministradorPagoService } from 'src/app/service/administradorPago.service';
+import { Cliente } from '../../interfaces/cliente.interface';
+import { Servicio } from '../../interfaces/servicio.interface';
 
 @Component({
   selector: 'app-pago-mantenimiento-visualizar-pago',
@@ -6,10 +12,70 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pago-mantenimiento-visualizar-pago.component.scss']
 })
 export class PagoMantenimientoVisualizarPagoComponent implements OnInit {
+  cliente: Cliente = {
+    id: 0,
+    dni: '',
+    apePaterno: '',
+    apeMaterno: '',
+    contrasenia: '',
+    direccion: '',
+    email: '',
+    nacionalidad: '',
+    nomUsuario: '',
+    nombre: '',
+    numTelefono: '',
+    sexo: '',
+    tipDocIdentificacion: '',
+    clienteSolicito: [],
+    correspondeCliente: []
+  }
 
-  constructor() { }
+  servicio: Servicio = {
+    id: 0,
+    costoServicio: 0,
+    descripcion: '',
+    estadoServicio: true,
+    fecCreacion: new Date,
+    fecExpiracion: new Date,
+    nombreServicio: ''
+  }
+  contrato: Contrato = {
+    id: 0,
+    descripcion: '',
+    direccion: '',
+    distritoDireccion: '',
+    estadoContrato: true,
+    fecCreacion: new Date,
+    fecFinalizacion: new Date,
+    modDePago: '',
+    refDireccion: '',
+    restricciones: '',
+    tasaDeMora: 0,
+    correspondeCliente: this.cliente,
+    tieneServicio: this.servicio
+  }
+  pago: Pago = {
+    id: 0,
+    estadoPago: true,
+    fechaLimitePago: new Date,
+    fechaPago: new Date,
+    monto: 0,
+    mora: 0,
+    correspondeContrato: this.contrato
+  }
+
+  
+
+
+  constructor(private pagoService: AdministradorPagoService, private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = this._route.snapshot.paramMap.get('id');
+    if(id!=null){
+      this.pagoService.listarPagoPorId(parseInt(id)).subscribe((data: Pago) => {
+        this.pago = data
+      });
+    }
   }
 
 }

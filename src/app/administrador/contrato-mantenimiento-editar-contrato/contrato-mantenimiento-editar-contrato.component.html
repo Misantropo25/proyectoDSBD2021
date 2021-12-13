@@ -1,5 +1,5 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Nuevo Contrato</div>
+    <div class="d-flex page__box p-3 mt-2">Editar Contrato</div>
     <div class="page__content shadow p-3 position-relative">
       <div class="page__content position-relative mt-3 mx-5">
         <div class="nav justify-content-end">
@@ -57,20 +57,20 @@
   
           <!-- Modo de Pago input-->
           <div class="input-group mb-3">
-            <select class="form-select" id="modoDePago" value="{{contrato.modDePago}}" #modoDePago>
-              <option selected>Modo de Pago</option>
-              <option id="modoDePago" value="M">Mensual</option>
-              <option id="modoDePago" value="F">Semestral</option>
-              <option id="modoDePago" value="O">Anual</option>
+            <select class="form-select" id="modDePago"  #modDePago>
+              <option disabled selected> {{contrato.modDePago}}</option>
+              <option id="modDePago" value="M">Mensual</option>
+              <option id="modDePago" value="F">Semestral</option>
+              <option id="modDePago" value="O">Anual</option>
             </select>
-            <label class="input-group-text" for="modoDePago">Seleccione</label>
+            <label class="input-group-text" for="modDePago">Seleccione</label>
           </div>
           <br />
 
           <!-- Modo de Pago input-->
           <div class="input-group mb-3">
-            <select class="form-select" id="estadoContrato" value="{{contrato.estadoContrato}}" #estadoContrato>
-              <option selected>Modo de Pago</option>
+            <select class="form-select" id="estadoContrato" value="estadoContrato(contrato.estadoContrato)" #estadoContrato>
+              <option disabled selected> {{contrato.estadoContrato}} </option>
               <option id="estadoContrato" value="M">True</option>
               <option id="estadoContrato" value="F">False</option>
             </select>
@@ -112,7 +112,7 @@
 
           <!-- tasaDeMora input -->
           <div class="form-outline mb-4">
-            <input type="number" disabled id="correspondeCliente" class="form-control" value="{{contrato.correspondeCliente}}" #correspondeCliente/>
+            <input type="number" disabled id="correspondeCliente" class="form-control" placeholder="{{contrato.correspondeCliente.nombre}}" #correspondeCliente/>
             <label class="form-label" for="correspondeCliente"
               >Corresponde Cliente </label
             >
@@ -120,7 +120,7 @@
 
           <!-- tasaDeMora input -->
           <div class="form-outline mb-4">
-            <input type="number" disabled id="tieneServicio" class="form-control" value="{{contrato.tieneServicio}}" #tieneServicio/>
+            <input type="number" disabled id="tieneServicio" class="form-control" placeholder="{{contrato.tieneServicio.nombreServicio}}" #tieneServicio/>
             <label class="form-label" for="tieneServicio"
               >Tiene Servicio</label
             >
@@ -130,7 +130,7 @@
   
   
           <!-- Submit button -->
-          <a href="/inicioAdmin/contratos" class="btn btn-primary btn-lg mb-4" tabindex="-1" role="button" (click)="editarContrato(id.value,descripcion.value,direccion.value,distritoDireccion.value,estadoContrato.value,modoDePago.value,refDireccion.value,restricciones.value,tasaDeMora.value)"> Registrar</a>
+          <a href="/inicioAdmin/contratos" class="btn btn-primary btn-lg mb-4" tabindex="-1" role="button" (click)="editarContrato(id.value,descripcion.value,direccion.value,distritoDireccion.value,estadoContrato.value,modDePago.value,refDireccion.value,restricciones.value,tasaDeMora.value)"> Registrar</a>
     
         </form>
       </div>

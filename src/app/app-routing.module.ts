@@ -6,9 +6,7 @@ import { UsuarioPlanesComponent } from './usuarios/usuario-planes/usuario-planes
 import { UsuarioContactoComponent } from './usuarios/usuario-contacto/usuario-contacto.component';
 import { UsuarioAyudaSoporteComponent } from './usuarios/usuario-ayuda-soporte/usuario-ayuda-soporte.component';
 import { UsuarioLoginComponent } from './usuarios/usuario-login/usuario-login.component';
-import { UsuarioClienteLogeadoHeaderComponent } from "./usuarios/usuario-cliente-logeado-header/usuario-cliente-logeado-header.component";
 import { UsuarioRegisterComponent } from './usuarios/usuario-register/usuario-register.component';
-import { UsuarioMantenimientoClienteComponent } from './usuarios/usuario-mantenimiento-cliente/usuario-mantenimiento-cliente.component';
 import { ServicioCompraPlanesComponent } from './servicios/servicio-compra-planes/servicio-compra-planes.component';
 import { ServicioCompraPlanesEnvioDatosComponent } from './servicios/servicio-compra-planes-envio-datos/servicio-compra-planes-envio-datos.component';
 import { ContratoVisualizacionComponent } from './contratos/contrato-visualizacion/contrato-visualizacion.component';
@@ -42,12 +40,23 @@ import { PagoMantenimientoNuevoPagoComponent } from './administrador/pago-manten
 import { PagoMantenimientoEditarPagoComponent } from './administrador/pago-mantenimiento-editar-pago/pago-mantenimiento-editar-pago.component';
 import { PagoMantenimientoVisualizarPagoComponent } from './administrador/pago-mantenimiento-visualizar-pago/pago-mantenimiento-visualizar-pago.component';
 import { RespuestasMantenimientoComponent } from './administrador/respuestas-mantenimiento/respuestas-mantenimiento.component';
+import { RespuestaMantenimientoNuevaRespuestaComponent } from './administrador/respuesta-mantenimiento-nueva-respuesta/respuesta-mantenimiento-nueva-respuesta.component';
+import { RespuestaMantenimientoEditarRespuestaComponent } from './administrador/respuesta-mantenimiento-editar-respuesta/respuesta-mantenimiento-editar-respuesta.component';
+import { RespuestaMantenimientoVisualizarRespuestaComponent } from "./administrador/respuesta-mantenimiento-visualizar-respuesta/respuesta-mantenimiento-visualizar-respuesta.component";
+import { TicketVisualizacionComponent } from "./tickets/ticket-visualizacion/ticket-visualizacion.component";
+import { ServicioMantenimientoPlanesComponent } from './servicios/servicio-mantenimiento-planes/servicio-mantenimiento-planes.component';
+import { TicketSolicitudComponent } from "./tickets/ticket-solicitud/ticket-solicitud.component";
 
 const routes: Routes = [
     //Seccion Principal Usuarios
     {
         path: '',
         component: UsuarioInicioComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'prueba1',
+        component: ServicioMantenimientoPlanesComponent,
         pathMatch: 'full'
     },
     {
@@ -87,32 +96,37 @@ const routes: Routes = [
     },
     ////Seccion Cliente
     {
-        path: 'cliente/personal',
+        path: 'cliente/personal/:id',
         component: UsuarioClientePersonalComponent,
         pathMatch: 'full'
     },
     {
-        path: 'cliente/planes',
+        path: 'cliente/planes/:id',
         component: ServicioCompraPlanesComponent,
         pathMatch: 'full'
     },
     {
-        path: 'cliente/planes/compra',
+        path: 'cliente/planes/compra/:id',
         component: ServicioCompraPlanesEnvioDatosComponent,
         pathMatch: 'full'
     },
     {
-        path: 'cliente/contrato',
+        path: 'cliente/contrato/:id',
         component: ContratoVisualizacionComponent,
         pathMatch: 'full'
     },
     {
-        path: 'cliente/tickets',
-        component: ContratoVisualizacionComponent,
+        path: 'cliente/tickets/:id',
+        component: TicketVisualizacionComponent,
         pathMatch: 'full'
     },
     {
-        path: 'cliente/personal/modificar',
+        path: 'cliente/solicitar/:id',
+        component: TicketSolicitudComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'cliente/personal/modificar/:id',
         component: UsuarioClientePersonalModificarComponent,
         pathMatch: 'full'
     },
@@ -234,7 +248,20 @@ const routes: Routes = [
             {   
                 path: 'respuestas',
                 component: RespuestasMantenimientoComponent 
-            }
+            },
+            {   
+                path: 'agregarRespuesta',
+                component: RespuestaMantenimientoNuevaRespuestaComponent 
+            },
+            {   
+                path: 'editarRespuesta/:id',
+                component: RespuestaMantenimientoEditarRespuestaComponent 
+            },
+            {   
+                path: 'visualizarRespuesta/:id',
+                component: RespuestaMantenimientoVisualizarRespuestaComponent 
+            }          
+
         ] 
     }
     

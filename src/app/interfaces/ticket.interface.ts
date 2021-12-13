@@ -1,3 +1,5 @@
+import { Cliente } from "./cliente.interface";
+
 export interface Ticket{
     id: number;
     descripcionTicket: string;
@@ -5,5 +7,5 @@ export interface Ticket{
     fecCreacion: Date;
     fecFinalizacion: Date;
     tipoDeSolicitud: string;
-    clienteSolicito: number;   
+    clienteSolicito: Cliente;   
 }
