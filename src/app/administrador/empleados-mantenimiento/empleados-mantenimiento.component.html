@@ -39,12 +39,12 @@
             <td>{{ empleado.nomUsuario }}</td>
             <td>{{ empleado.contrasenia }}</td>
             <td>
-              <a [routerLink]="['/inicioAdmin/visualizarEmpleado',empleado.id]"><button class="btn btn-outline-primary">
+              <a [routerLink]="['/inicioAdmin/id/visualizarEmpleado',empleado.id]"><button class="btn btn-outline-primary">
                 <i class="far fa-eye"></i> Ver
               </button></a>
             </td>
             <td>
-              <a [routerLink]="['/inicioAdmin/editarEmpleado',empleado.id]"><button class="btn btn-outline-warning" >
+              <a [routerLink]="['/inicioAdmin/id/editarEmpleado',empleado.id]"><button class="btn btn-outline-warning" >
                 <i class="far fa-edit"></i> Editar
               </button></a>
             </td>

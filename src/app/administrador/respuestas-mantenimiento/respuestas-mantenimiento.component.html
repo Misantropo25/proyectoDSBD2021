@@ -33,12 +33,12 @@
               <td>{{ respuesta.empleadoRespondio }}</td>
               <td>{{ respuesta.ticketRespondio }}</td>
               <td>
-                <a [routerLink]="['/inicioAdmin/visualizarRespuesta',respuesta.id]"><button class="btn btn-outline-primary">
+                <a [routerLink]="['/inicioAdmin/id/visualizarRespuesta',respuesta.id]"><button class="btn btn-outline-primary">
                   <i class="far fa-eye"></i> Ver
                 </button></a>
               </td>
               <td>
-                <a [routerLink]="['/inicioAdmin/editarRespuesta',respuesta.id]"><button class="btn btn-outline-warning" >
+                <a [routerLink]="['/inicioAdmin/id/editarRespuesta',respuesta.id]"><button class="btn btn-outline-warning" >
                   <i class="far fa-edit"></i> Editar
                 </button></a>
               </td>

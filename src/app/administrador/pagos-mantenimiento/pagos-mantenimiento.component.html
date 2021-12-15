@@ -33,12 +33,12 @@
             <td>{{ pago.fechaLimitePago }}</td>
             <td>{{ pago.estadoPago }}</td>
             <td>
-              <a [routerLink]="['/inicioAdmin/visualizarPago',pago.id]"><button class="btn btn-outline-primary">
+              <a [routerLink]="['/inicioAdmin/id/visualizarPago',pago.id]"><button class="btn btn-outline-primary">
                 <i class="far fa-eye"></i> Ver
               </button></a>
             </td>
             <td>
-              <a [routerLink]="['/inicioAdmin/editarPago',pago.id]"><button class="btn btn-outline-warning" >
+              <a [routerLink]="['/inicioAdmin/id/editarPago',pago.id]"><button class="btn btn-outline-warning" >
                 <i class="far fa-edit"></i> Editar
               </button></a>
             </td>
