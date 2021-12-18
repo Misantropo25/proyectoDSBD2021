@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Contrato } from '../interfaces/contrato.interface';
-import { Cliente } from '../interfaces/cliente.interface';
-import { Servicio } from '../interfaces/servicio.interface';
+
 
 
 
